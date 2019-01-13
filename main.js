@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log('App starting!');
+    console.log('Page loaded');
     ko.applyBindings(new userDetailsViewModel());
 })
 
@@ -10,7 +10,7 @@ function userDetailsViewModel() {
     self.dateOfBirth = ko.observable("");
     self.decision = ko.observable("");
 
-    var $loading = $('#loadingDiv').hide();
+    var $loading = $('#loadingDiv'); //.hide();
 
     $(document)
     .ajaxStart(function () {
@@ -23,14 +23,6 @@ function userDetailsViewModel() {
     });
 
     submitDetails = function() {
-
-        // var userDetails = {
-        //     "body": {
-        //         firstName: self.firstName,
-        //         lastName: self.lastName,
-        //         dateOfBirth: self.dateOfBirth
-        //     }
-        // }
 
         var userDetails = {
             "body": {
